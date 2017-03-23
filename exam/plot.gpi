@@ -1,0 +1,8 @@
+set term png
+set out "plot.pdf"
+set xlabel "x [arb. units]"
+set ylabel "t [arb. units]"
+set key right bottom
+plot \
+ "data.txt" using 1:3 with lines title "Exact log",\
+ "data.txt" using 1:2 with points title "Calculated log"

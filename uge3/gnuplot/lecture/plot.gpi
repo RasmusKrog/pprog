@@ -1,0 +1,12 @@
+set term postscript eps enhanced color
+set output '[ps2pdf - plot.pdf'
+set xlabel "x"
+set ylabel "y"
+set tics out
+set key out
+plot \
+	"data" with points title "data"  \
+	, sin(x) with lines title "theory"
+set terminal latex
+set output "plot.tex"
+replot	

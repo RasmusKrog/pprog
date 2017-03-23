@@ -1,0 +1,9 @@
+set term png
+set title "Energies from the variational method"
+set output "plot.png"
+set key out
+set grid
+set xlabel "Alpha [arb. units]"
+set ylabel "Energy [arb. units]"
+plot \
+"output_integ.txt" using "a":"E(a)" with lines notitle \

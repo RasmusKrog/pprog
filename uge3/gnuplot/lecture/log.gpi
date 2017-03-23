@@ -1,0 +1,10 @@
+set term postscript eps enhanced color
+set out "plotdouble.pdf"
+set key out
+set xlabel "x"
+set ylabel "y"
+plot \
+"out-stdio.dat" with points title "stdio" \
+,"out-cmdline.dat" with points title "cmdline" \
+,sin(x) with lines \
+,cos(x) with lines

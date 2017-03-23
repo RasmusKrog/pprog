@@ -1,0 +1,8 @@
+set term png
+set out "plot.pdf"
+set xlabel "r"
+set xlabel "Fe(r)"
+set key right bottom
+plot \
+"out.txt" using 2:5 index 2  with point title "calculated"\
+,"out.txt" using 2:8 index 2 with lines title "exact",

@@ -1,0 +1,10 @@
+set term png
+set out "plot.png"
+set key out
+set xlabel "x"
+set ylabel "y"
+plot \
+"out-stdio.dat" with points title "stdio" \
+,"out-cmdline.dat" with points title "cmdline" \
+,sin(x) with lines \
+,cos(x) with lines

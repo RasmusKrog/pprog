@@ -1,0 +1,2 @@
+Result = -4.000000000000
+Estimated error = 0.000000000000

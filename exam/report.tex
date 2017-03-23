@@ -1,0 +1,47 @@
+\documentclass[a4paper,oneside,onecolumn,article,10pt]{memoir}
+\usepackage[utf8x]{inputenc}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{placeins}
+
+\title{Practical programming for physicists - Exam}
+\author{Rasmus Krog - 201407910}
+\date{\today}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\noindent
+
+\chapter*{Question number 4 from lecture 5}
+\textbf{Where does the function scanf read from?} \\
+The scanf function reads input from the standard input stream, stdin.
+
+\chapter*{Problem 3}
+\textbf{Natural logarithm (root finding).} Implement a function that calculates the natrual logarithm
+$t$ of a real positive number $x$, $t=ln(x)$, by solving the equation 
+\begin{align}\label{eq:log}
+e^t = x.
+\end{align}
+You can use the function exp from $<$math.h$>$ or gsl\_sf\_exp from GSL. 
+\subsection*{solution of problem 3}
+In this section we will go through the steps needed to calculate $t$ from Equation~\ref{eq:log}. The procedure here is to use root finding on the following
+\begin{align}\label{eq:expfunc}
+y(t)=e^t-x
+\end{align}
+where $x$ is a parameter and $t$ is the variable we need to solve. \\
+Here GNU Scientific Library (GSL) have the command/function gsl\_multiroot\_fsolver. This will implemented in our main function where its input is placed outside the main function. Equation~\ref{eq:expfunc} is called exp\_function in main.c and we set the dimension to dim$=1$. We then allocate room - using alloc - for solving Equation~\ref{fig:exponentialfunction}. Last thing to is using a do/while loop to achieve best accuracy in our calculations. If the function is not solved correctly break is implemented in our do loop. The output is printed in data.txt and contains x, y and log(x), respectively. This will then be plotted in gnuplot and can be seen in Figure~\ref{fig:exponentialfunction}1. 
+\FloatBarrier
+\begin{figure}
+\centering
+\includegraphics[width=0.95\textwidth]{plot.pdf}
+\label{fig:exponentialfunction}
+\caption{Plot of exact logarithm using $<$math.h$>$ and calculated logarithm using Equation~\ref{eq:log}. Calculated values seems to be in direct correlation with the exact value within the range [0:10] in steps of 0.2.}
+\end{figure}
+\FloatBarrier
+
+\end{document}

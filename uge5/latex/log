@@ -1,0 +1,10 @@
+set term png
+set title "RASMUS KROG - TEST"
+set output "plot.png"
+set key out
+set size ratio -1
+set grid
+set xlabel "x"
+set ylabel "y"
+plot \
+"out_error.txt" using "x":"errfunc" with lines notitle \

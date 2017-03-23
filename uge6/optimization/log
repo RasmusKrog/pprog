@@ -1,0 +1,10 @@
+set term png
+set title "Least-squares fit to data"
+set output "plot.png"
+set key out
+set grid
+set xlabel "Time [arb. units]"
+set ylabel "Activity [arb. units]"
+plot \
+"out_leastsquares.txt" index 0 with errorbars title "Experiment" \
+, "out_leastsquares.txt" index 1 with lines title "Model"

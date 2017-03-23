@@ -1,0 +1,10 @@
+set term png
+set title "Eigen-functions"
+set output "plot.png"
+set key out
+set xlabel "x"
+set ylabel "u(x)"
+plot \
+ "data" using "x":"u0" with lines title "u_0" \
+,"data" using "x":"u1" with lines title "u_1" \
+,"data" using "x":"u2" with lines title "u_2"

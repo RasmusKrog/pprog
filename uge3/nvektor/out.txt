@@ -1,0 +1,9 @@
+t = [3, 2, 1]
+Setting new value of t[1]
+t = [3, 1.23, 1]
+Using nvector_get to get the third element of the vector t
+v[2]=1
+Making a new vector, p
+p = [1.23, 2.34, 3.45]
+The dot product between p and t is
+dot(t,p) = 10.0182
